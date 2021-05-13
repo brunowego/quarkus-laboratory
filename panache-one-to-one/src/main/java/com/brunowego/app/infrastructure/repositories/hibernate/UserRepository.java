@@ -8,6 +8,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.Response;
 
+import com.brunowego.app.domain.model.entities.Profile;
 import com.brunowego.app.domain.model.entities.User;
 
 import io.quarkus.panache.common.Sort;
@@ -39,7 +40,21 @@ public class UserRepository {
         }
 
         if (entity.getProfile() != null) {
-            user.setProfile(entity.getProfile());
+            Profile profile = Profile.findById(entity.getProfile().getId());
+
+            if (entity.getProfile().getEmail() != null) {
+                profile.setEmail(entity.getProfile().getEmail());
+            }
+
+            if (entity.getProfile().getFirstName() != null) {
+                profile.setFirstName(entity.getProfile().getFirstName());
+            }
+
+            if (entity.getProfile().getLastName() != null) {
+                profile.setLastName(entity.getProfile().getLastName());
+            }
+
+            user.setProfile(profile);
         }
 
         return user;
