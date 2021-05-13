@@ -23,10 +23,11 @@ docker run -d \
   docker.io/library/postgres:12.6-alpine
 
 #
-docker exec -i panache-crud-postgresql psql \
-  -U user \
-  -d dev \
-  -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"'
+docker exec -i panache-crud-postgresql \
+  psql \
+    -U user \
+    -d dev \
+    -c 'CREATE EXTENSION IF NOT EXISTS "uuid-ossp"'
 ```
 
 ### Running
