@@ -19,13 +19,13 @@ public class User extends PanacheEntityBase {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    public UUID id;
+    private UUID id;
 
     @Column(unique = true)
-    public String username;
+    private String username;
 
     @Column(unique = true)
-    public String email;
+    private String email;
 
     @Column(name = "fname")
     private String firstName;

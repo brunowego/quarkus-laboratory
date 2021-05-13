@@ -34,7 +34,7 @@ Content-Type: {{contentType}}
 
 {
   "id": "{{userId}}",
-  "email": "richardroe@example.com"
+  "email": "richardroe2@example.com"
 }
 
 ### Delete user
