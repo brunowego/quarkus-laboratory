@@ -27,7 +27,7 @@ public class User extends PanacheEntityBase {
     @Column(unique = true)
     private String username;
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToOne(optional = false, mappedBy = "user", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Profile profile;
 

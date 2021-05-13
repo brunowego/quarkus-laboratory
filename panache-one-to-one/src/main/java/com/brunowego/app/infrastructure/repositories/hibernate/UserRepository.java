@@ -26,6 +26,16 @@ public class UserRepository {
 
     @Transactional
     public User create(User entity) {
+        if (entity.getProfile() != null) {
+            Profile profile = new Profile();
+            profile.setUser(entity);
+            profile.setEmail(entity.getProfile().getEmail());
+            profile.setFirstName(entity.getProfile().getFirstName());
+            profile.setLastName(entity.getProfile().getLastName());
+
+            entity.setProfile(profile);
+        }
+
         entity.persist();
 
         return entity;
