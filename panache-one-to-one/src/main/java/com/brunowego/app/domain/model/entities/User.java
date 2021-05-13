@@ -52,6 +52,8 @@ public class User extends PanacheEntityBase {
     }
 
     public void setProfile(Profile profile) {
+        profile.setUser(this);
+
         this.profile = profile;
     }
 
