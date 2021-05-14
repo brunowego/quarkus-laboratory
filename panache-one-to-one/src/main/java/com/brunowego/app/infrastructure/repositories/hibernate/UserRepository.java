@@ -17,7 +17,7 @@ import io.quarkus.panache.common.Sort;
 public class UserRepository {
 
     public List<User> findAll() {
-        return User.listAll(Sort.by("id"));
+        return User.listAll(Sort.by("username"));
     }
 
     public User get(UUID id) {
