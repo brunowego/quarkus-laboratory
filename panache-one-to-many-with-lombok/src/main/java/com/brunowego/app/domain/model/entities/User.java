@@ -46,6 +46,10 @@ public class User extends PanacheEntityBase {
     private List<Address> addresses = new ArrayList<>();
 
     public void setAddresses(List<Address> addresses) {
+        for (Address address : this.addresses) {
+            address.delete();
+        }
+
         for (Address address : addresses) {
             address.setUser(this);
         }
